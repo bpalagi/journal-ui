@@ -88,7 +88,7 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
           contentType.slice(1, contentType.length - 1)}
       </Button>
 
-      <Button className="h-[36px] w-[36px] p-1" onClick={handleCreateFolder}>
+      <Button className="size-[36px] p-1" onClick={handleCreateFolder}>
         <IconFolderPlus size={20} />
       </Button>
 
