@@ -1,30 +1,8 @@
-# Chatbot UI
+Please find the original ChatbotUI repository here: https://github.com/mckaywrigley/chatbot-ui
 
-The open-source AI chat app for everyone.
+# Journal UI
 
-<img src="./public/readme/screenshot.png" alt="Chatbot UI" width="600">
-
-## Demo
-
-View the latest demo [here](https://x.com/mckaywrigley/status/1738273242283151777?s=20).
-
-## Official Hosted Version
-
-Check back soon for an official hosted version of Chatbot UI.
-
-## Official Desktop App
-
-Check back soon for an official desktop app for Chatbot UI. Just click download & start chatting - no setup required.
-
-## Support
-
-If you find Chatbot UI useful, please consider [sponsoring](https://github.com/sponsors/mckaywrigley) me to support my open-source work :)
-
-## Legacy Code
-
-Chatbot UI was recently updated to its 2.0 version.
-
-The code for 1.0 can be found on the `legacy` branch.
+The open-source AI Journal app for everyone.
 
 ## Updating
 
@@ -38,17 +16,16 @@ npm run update
 
 Follow these steps to get your own Chatbot UI instance running locally.
 
-You can watch the full video tutorial [here](https://www.youtube.com/watch?v=9Qq3-7-HNgw).
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/mckaywrigley/chatbot-ui.git
+git clone https://github.com/bpalagi/journal-ui.git
 ```
 
 ### 2. Install dependencies
 
-Open a terminal in the root directory of your local Chatbot UI repository and run:
+Open a terminal in the root directory of your local Journal UI repository and run:
 
 ```bash
 npm install
@@ -56,50 +33,24 @@ npm install
 
 ### 3. Install Supabase & run locally
 
-#### Why Supabase?
-
-Previously, we used local browser storage to store data. However, this was not a good solution for a few reasons:
-
-- Security issues
-- Limited storage
-- Limits multi-modal use cases
-
-We now use Supabase because it's easy to use, it's open-source, it's Postgres, and it has a free tier for hosted instances.
-
-We will support other providers in the future to give you more options.
 
 #### 1. Install Docker
 
-You will need to install Docker to run Supabase locally. You can download it [here](https://docs.docker.com/get-docker) for free.
-
 #### 2. Install Supabase CLI
-
-**MacOS/Linux**
-
-```bash
-brew install supabase/tap/supabase
-```
-
-**Window**
-
-```bash
-scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
-scoop install supabase
-```
 
 #### 3. Start Supabase
 
-In your terminal at the root of your local Chatbot UI repository, run:
+In your terminal at the root of your local Journal UI repository, run:
 
 ```bash
-supabase start
+npx supabase start
 ```
 
 ### 4. Fill in secrets
 
 #### 1. Environment variables
 
-In your terminal at the root of your local Chatbot UI repository, run:
+In your terminal at the root of your local Journal UI repository, run:
 
 ```bash
 cp .env.local.example .env.local
@@ -108,7 +59,7 @@ cp .env.local.example .env.local
 Get the required values by running:
 
 ```bash
-supabase status
+npx supabase status
 ```
 
 Note: Use `API URL` from `supabase status` for `NEXT_PUBLIC_SUPABASE_URL`
@@ -128,19 +79,23 @@ This prevents issues with storage files not being deleted properly.
 
 ### 5. Install Ollama (optional for local models)
 
-Follow the instructions [here](https://github.com/jmorganca/ollama#macos).
+Example:
+```bash
+ollama run orca-mini
+```
 
 ### 6. Run app locally
 
-In your terminal at the root of your local Chatbot UI repository, run:
+In your terminal at the root of your local Journal UI repository, run:
 
 ```bash
 npm run chat
 ```
 
-Your local instance of Chatbot UI should now be running at [http://localhost:3000](http://localhost:3000).
+Your local instance of ChJournalatbot UI should now be running at [http://localhost:3000](http://localhost:3000).
 
 You can view your backend GUI at [http://localhost:54323/project/default/editor](http://localhost:54323/project/default/editor).
+
 
 ## Hosted Quickstart
 
@@ -248,11 +203,3 @@ For the full list of environment variables, refer to the '.env.local.example' fi
 Click "Deploy" and wait for your frontend to deploy.
 
 Once deployed, you should be able to use your hosted instance of Chatbot UI via the URL Vercel gives you.
-
-## Contributing
-
-We are working on a guide for contributing.
-
-## Contact
-
-Message Mckay on [Twitter/X](https://twitter.com/mckaywrigley)
